@@ -14,7 +14,7 @@ class Program{
         httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
 
         // Set up the request params
-        var requestBody = new{model = "gpt-3.5-turbo",messages = new[]
+        var requestBody = new{model = "gpt-4",messages = new[]
             {
                 new { role = "system", content = "You are a helpful assistant." },
                 new { role = "user", content = prompt }
