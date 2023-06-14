@@ -53,7 +53,7 @@ class Program{
         Console.WriteLine($"{"Total Tokens Used:",-35}{promptTokens + completionTokens:N0}");
 
         // Calculate cost of GPT-3.5-turbo
-        decimal gpt35TurboUsageCost = (promptTokens + completionTokens) * 0.002m / 1000m;
+        decimal gpt35TurboUsageCost = (promptTokens + completionTokens) * 0.0015m / 1000m;
         Console.WriteLine($"{"GPT-3.5-Turbo Usage Cost: ",-35}${gpt35TurboUsageCost:F6}");
 
         // Calculate cost of GPT-4
