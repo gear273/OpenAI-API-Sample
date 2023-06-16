@@ -14,7 +14,7 @@ class Program{
         httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
 
         // Set up the request params
-        var requestBody = new{model = "gpt-4",messages = new[]
+        var requestBody = new{model = "gpt-3.5-turbo",messages = new[]
             {
                 new { role = "system", content = "You are a helpful assistant." },
                 new { role = "user", content = prompt }
@@ -35,8 +35,13 @@ class Program{
 
         // Extract the response
         var message = jsonDocument.RootElement.GetProperty("choices")[0].GetProperty("message").GetProperty("content").GetString();
-
-        return message;
+        if (message != null){
+            return message;
+        }
+        else{
+            return "Failed to get response";
+        }
+        
     }
     
     // Cost evaluation
